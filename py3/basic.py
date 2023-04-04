@@ -44,7 +44,7 @@ print(nome, 'tem', idade, 'anos e seu IMC é:', idiceMassaCorporal)
 
 print ('Com o ".format" fica: {n} tem {i} anos e seu IMC é: {imc}'.format(n=nome, i=idade, imc=idiceMassaCorporal)) #pode ser substituido por número, no caso nome seria 0, idade 1 e assim vai
 
-print(f'{nome} tem {idade} anos e seu IMC é: {idiceMassaCorporal}')
+print(f'{nome} tem {idade} anos e seu IMC é: {idiceMassaCorporal:.2f}') #variavael com ':.2f' ele deixa apenas 2 casas decimais 
 
 '''
     Tipos de Dados
@@ -67,3 +67,5 @@ print(46, 39, sep='-') #separador
 \r\n -> CRLF -> quebra linha
 \n ->LF ->unix
 '''
+
+print(  type('Vini Sant'), type(10), type(1.9), type(True)    ) #fala qual tipo de dado que é
