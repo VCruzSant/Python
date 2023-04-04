@@ -7,5 +7,6 @@ if enter == 'entrar':
     print('você entrou no Sistema')
 elif enter == 'sair':
     print('você saiu no Sistema')
+    ...
 else:
     print('Digite corretamente o que deseja')
