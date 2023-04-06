@@ -1,13 +1,22 @@
-'''
+"""
 try -> tente executar o código
-except -> ocorreu algum erro ao executar o código
-'''
+except -> se ocorrer erro no try, tente isso
+"""
 
-numstr = input('Digite um número: ')
+numstr = input("Digite um número: ")
 
-if numstr.isdigit():
+'''if numstr.isdigit():
     numflo = float(numstr)
-    print(f'o dobro de {numstr} é: {numflo} * 2')
+    print(f"o dobro de {numstr} é: {numflo * 20}")
 
-else: 
-    print('não é um número valido')
+else:
+    print("não é um número valido")
+'''
+try:
+    numflo = float(numstr)
+    print(f"o dobro de {numstr} é: {numflo * 2}")
+
+except:
+    print("não é um número valido")
+
+#try e except não é usado assim, usei assim para entender o funcionamento.
