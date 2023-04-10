@@ -27,5 +27,3 @@ Operadores de atribuição
 cont = 0
 cont += 1 # --> cont = cont + 1| é a mesma coisa
 print(cont)
-
-print(103-62)
