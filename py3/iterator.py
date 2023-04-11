@@ -15,3 +15,11 @@ while True:
 
     except StopIteration:
         break
+
+
+'''
+Tudo isso:
+
+for letra in text:
+    print letra
+'''
