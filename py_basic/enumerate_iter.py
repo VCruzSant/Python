@@ -7,5 +7,5 @@ print(lista)
 lista_enumerated = list(enumerate(lista)) #dessa forma é possivel salvar o enumerated numa variavel e imprimi-lá
 print(lista_enumerated)
 
-for indice, iten in enumerate(lista): #iterando para ver o valor enumerado 
+for indice, iten in enumerate(lista): #iterando para ver o valor enumerado -> desempacotamento
     print(indice, iten)
