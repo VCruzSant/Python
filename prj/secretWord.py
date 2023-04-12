@@ -11,11 +11,15 @@ while True:
     num_tentativas += 1
     numbs = "123456789"
 
-    if len(letra_digitada) > 1 or letra_digitada == ' ': #lógica de apenas uma letra
+    if len(letra_digitada) > 1: #lógica de apenas uma letra
         print('Digite apenas uma letra')
         continue
+
+    elif letra_digitada == '':
+        print('Você não digitou uma letra')
+        continue
     
-    if letra_digitada in numbs:
+    elif letra_digitada in numbs:
         print('digite apenas letras')
         continue
 
