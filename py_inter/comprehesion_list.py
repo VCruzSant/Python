@@ -1,3 +1,8 @@
+import pprint
+
+def p(inf):
+    pprint.pprint(inf,  sort_dicts=False, width=37)
+
 #List Comprehesion -> forma rápida de criar listas
 #print(list(range(10)))
 
@@ -28,4 +33,9 @@ new_products = [
     for prdt in products
 ]
 
-print(*new_products, sep='\n')
+# print(*new_products, sep='\n')
+
+# p(new_products)
+
+lista = [iten for iten in range(11) if iten < 6]
+print(lista)
