@@ -8,4 +8,3 @@ if hasattr(string, metodo_up) is True: #hasattr -> chega se um OBJ tem um determ
 
 else:
     print('não existe')
-    
