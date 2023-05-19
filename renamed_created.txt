@@ -1,0 +1,5 @@
+hellow word
+ai ai ai ai ai
+sla 
+outra linha do witrelines 
+mais uma linha ateção do writelines
