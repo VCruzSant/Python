@@ -1,24 +1,23 @@
 import json
-import os
 
-people_my = {
-    "name": 'Santiago',
-    "age": 20,
-    "address":[
-        {"street":'Tiberio', "city": 'Cotia'}
-    ]
-}
+# people = {
+#     "name": "Santiago",
+#     "age": 20,
+#     "address":[
+#         {"street":"street1", "city": "citySP", "number": 24}
+#     ]
+# }
 
-BASE_DIR = os.path.dirname(__file__)
-SAVE_TO = os.path.join(BASE_DIR, 'examplejson.json')
+# with open('examplejson.json', 'w', encoding='utf8') as file: #criando arquivo json
+#     json.dump(
+#         people, 
+#         file, 
+#         ensure_ascii=False, 
+#         indent=2
+#         ) #passando as inf que esse arquivo vai ter, selecionando os dados e ação
 
-with open(SAVE_TO, 'w', encoding='utf8') as file:
-    json.dump(people_my, file, indent=2) #-> jogar pra fora
-    file.seek(0, 0)
 
-with open(SAVE_TO, 'r') as file:
+
+with open('.\examplejson.json', 'r', encoding='utf8') as file:
     peoples = json.load(file)
-    
-    for people in peoples:
-        print(peoples['name'])
-
+    print(peoples)
