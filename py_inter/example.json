@@ -1,0 +1,7 @@
+{
+    "name": "Santiago",
+    "age": 20,
+    "address":[
+        {"street":"Tibério", "city": "Cotia"}
+    ]
+}
