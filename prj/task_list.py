@@ -1,3 +1,5 @@
+import os
+
 list_task = []
 task_deleted = []
 
@@ -16,9 +18,10 @@ while True:
         if list_task == []:
             print('sem nenhuma tarefa')
             print()
-        else:
-            print(list_task)
-            print()
+            continue
+        
+        print(list_task)
+        print()
         continue
 
 
@@ -26,12 +29,13 @@ while True:
         if list_task == []:
             print('nada para desfazer')
             print()
-        else:
-            last_task = list_task[-1]
-            add_task(last_task, task_deleted)
-            list_task.pop()
-            print(list_task)
-            print()
+            continue
+        
+        last_task = list_task[-1]
+        add_task(last_task, task_deleted)
+        list_task.pop()
+        print(list_task)
+        print()
         continue
 
 
@@ -39,12 +43,23 @@ while True:
         if task_deleted == []:
             print('nada para refazer')
             print()
-        else:
-            last_task = task_deleted[-1]
-            add_task(last_task, list_task)
-            task_deleted.pop()
-            print(list_task)
-            print()
+            continue
+        
+        last_task = task_deleted[-1]
+        add_task(last_task, list_task)
+        task_deleted.pop()
+        print(list_task)
+        print()
+        continue
+
+    elif command in ('1234567890'):
+        print('número não é aceito')
+        print()
+        continue
+
+
+    elif command == 'clear':
+        os.system('cls')
         continue
 
 
