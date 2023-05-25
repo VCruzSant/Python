@@ -22,7 +22,7 @@ class Pen():
     #     return self.color 
 
     @property
-    def get_color(self):
+    def get_color(self): # mesma coisa do exemplo acima de um jeito pythonico, só passar o get_color pro cliente
         return self.color_atualization
 ###################################
 # código cliente
