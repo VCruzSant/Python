@@ -1,5 +1,8 @@
 # Métodos em instancias python
-
+# Classe - molde (sem dados)
+# instancia da classe - Objeto -> dados
+# Classe pode gerar instancias 
+# Na Classe o self é sua própria instancia 
 
 class Car:
     def __init__(self, name_car=None):
