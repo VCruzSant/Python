@@ -17,15 +17,35 @@
 class Pen():
     def __init__(self, color):
         self.color_atualization = color 
+        self._color = self.color_atualization
+        self._color_tamp = None
 
     # def get_color(self): #com isso, o self.color é protegido e pode fazer alterações no código, unica coisa que vai passar para quem está trabalhando com vc -> get_color()
     #     return self.color 
 
     @property
-    def get_color(self): # mesma coisa do exemplo acima de um jeito pythonico, só passar o get_color pro cliente
-        return self.color_atualization
+    def color(self): # mesma coisa do exemplo acima de um jeito pythonico, só passar o get_color pro cliente
+        return self._color
+    
+    @color.setter
+    def color(self, value):
+        print('estou no setter da cor da caneta')
+        self._color = value
+
+    @property
+    def color_tamp(self):
+        return self._color_tamp
+    
+    @color_tamp.setter
+    def color_tamp(self, value):
+        print('estou no setter da cor da tampa')
+        self._color_tamp = value
 ###################################
 # código cliente
 
 p1 = Pen('blue')
-print(p1.get_color)
+p1.color = 'red'
+p1.color_tamp = 'black'
+print(p1.color)
+print(p1.color_tamp)
+
