@@ -54,5 +54,5 @@ print(lancer.manufacture.name_manufacturer, lancer.name_car,  lancer.motor.name_
 lancer_evo = Car('Lancer Evo')
 lancer_evo.motor = motor_2_0
 lancer_evo.manufacture = mitsubishi
-
+ 
 print(lancer_evo.manufacture.name_manufacturer, lancer_evo.name_car,  lancer.motor.name_motor)
