@@ -28,12 +28,15 @@ class B(A):
 
 class C(B):
     atribut_c = 'value c'
-    def metod(self):
-        super(C, self).metod() # -> é = a super().metod() de maneira explicita
+    def metod(self): 
+        super(B, self).metod()
+        super(C, self).metod() # -> mesma coisa que super().metod() de mandeira explicita
         print('C')
 
 c = C()
-print(c.atribut_a)
-print(c.atribut_b)
-print(c.atribut_c)
+# print(c.atribut_a)
+# print(c.atribut_b)
+# print(c.atribut_c)
 c.metod()
+
+print(C.mro())
