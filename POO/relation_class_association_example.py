@@ -22,8 +22,6 @@ class BrandName:
 d1 = Driver('vini')
 d2 = Driver('Sant')
 b1 = BrandName('BMW')
-d1.brand = 'bmw'
-print(d1.brand)
 
 d1.brand = b1
 d2.brand = b1
