@@ -1,0 +1,3 @@
+Succes: Deu ruim -> LogFileMixin
+Succes: Deu bom -> LogFileMixin
+Succes: Deu ruim -> LogFileMixin
