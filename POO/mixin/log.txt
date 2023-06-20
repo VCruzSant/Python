@@ -1,0 +1,20 @@
+Success: boa -> LogFileMixin
+
+Error: deu ruim -> LogFileMixin
+
+Success: boa -> LogFileMixin
+
+Error: deu ruim -> LogFileMixin
+
+Success: boa -> LogFileMixin
+
+Error: deu ruim -> LogFileMixin
+Success: boa -> LogFileMixin
+Error: deu ruim -> LogFileMixin
+Success: boa -> LogFileMixin
+Error: deu ruim -> LogFileMixin
+Success: boa teste -> LogFileMixin
+Error: deu ruim -> LogFileMixin
+Success: boa -> LogFileMixin
+Error: deu ruim -> LogFileMixin
+Success: boa -> LogFileMixin
