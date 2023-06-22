@@ -13,7 +13,7 @@ class NotificationEmail(Notification):
         return True
     
 class NotificationSms(Notification):
-    def send_notify(self): 
+    def send_notify(self) -> bool: 
         print(f'SMS: enviando -> {self._msg}')
         return True
 
