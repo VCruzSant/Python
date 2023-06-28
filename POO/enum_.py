@@ -18,17 +18,20 @@
 import enum
 
 # Directions = enum.Enum('Direction', ['LEFT', 'RIGHT', 'UP', 'DOWN'])
+# Para facilitar a tipagem:
 class Directions(enum.Enum):
-    LEFT = 1
+    # LEFT = 1
+    # Como fazer automatico:
+    LEFT = enum.auto()
     RIGHT = 2
     UP = 3
     DOWN = 4
+
 print(Directions(1))
 
 def move(direction: Directions):
     if not isinstance(direction, Directions):
         raise ValueError('invalid direction')
-    
     print(f'moving in {direction}')
 
 move(Directions.LEFT)
