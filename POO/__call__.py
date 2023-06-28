@@ -9,7 +9,7 @@ class CallMe:
     def __init__(self, phone):
         self.phone = phone
 
-        
+
     def __call__(self, name):
         print(f'{name} are call in {self.phone}')
 
