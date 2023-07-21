@@ -29,4 +29,5 @@ with open(PATH_CSV, 'w', encoding='utf8', newline='') as file:
     reader.writeheader()
 
     for customer in customer_list:
+        print(customer)
         reader.writerow(customer)
