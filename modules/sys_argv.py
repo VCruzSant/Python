@@ -9,4 +9,4 @@ len_argmnts = len(argmnts)
 if len_argmnts <= 1:
     print('Você não passou argumentos')
 else:
-    print(f'Você passo os argumentos: {argmnts}')
+    print(f'Você passo os argumentos: {argmnts[1:]}')
