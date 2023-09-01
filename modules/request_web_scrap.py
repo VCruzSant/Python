@@ -14,17 +14,35 @@ from bs4 import BeautifulSoup
 URL = 'http://localhost:3001/'
 # mandando requisição get na url:
 response = requests.get(URL)
+
 # definindo html do site que eu mandei a requisição:
-raw_html = response.text
+raw_html = response.content
+
 # html convertido:
-parse_html = BeautifulSoup(raw_html, 'html.parser')
+parse_html = BeautifulSoup(raw_html, 'html.parser', from_encoding='utf-8')
+
 # Pegando tudo:
 # print(parse_html)
 
 # Apenas o titulo:
-print(parse_html.title)
+# print(parse_html.title)
 
 # apenas o texto do titulo sem a tag html:
 # coloquei o if pq a tipagem diz que pode retornar 2 coisas:
 if parse_html.title is not None:
-    print(parse_html.title.text)
+    # print(parse_html.title.text)
+    ...
+
+# pegando um selector em especifico na página:
+top_jobs_heading = parse_html.select_one('#intro > div > div > article > h2')
+
+if top_jobs_heading is not None:
+    # print(top_jobs_heading.text)
+
+    # pai do seletor que eu peguei
+    parent_top_jobs = top_jobs_heading.parent
+    # print(parent_top_jobs)
+
+    if parent_top_jobs is not None:
+        # pegando todos os paragrafos
+        print(parent_top_jobs.select('p'))
