@@ -5,7 +5,7 @@ import requests
 # http -> porta 80
 # https -> porta 443
 
-url = 'http://localhost:3000/'
+url = 'https://www.google.com.br/'
 response = requests.get(url)
 
 # resposta geral do servidor
