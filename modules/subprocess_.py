@@ -21,4 +21,31 @@
 # Windows: ping 127.0.0.1
 # Linux/Mac: ping 127.0.0.1 -c 4
 
-print('consegui de vez!!!! Obrigado Deus!!!')
+import subprocess
+import sys
+
+print(sys.platform)
+
+# terminal = ['ping', '127.0.0.1', '-c', '4']
+# tudo junto pq o shell é True
+terminal = ['ls -lah /']
+encoding = 'utf_8'
+system = sys.platform
+
+# para win:
+if system == 'win32':
+    terminal = ['ping', '127.0.0.1',]
+    encoding = 'cp850'
+
+# para linux:
+proc = subprocess.run(
+    terminal, capture_output=True,
+    text=True, encoding=encoding,
+    shell=True
+)
+
+
+print(proc.args)
+print(proc.stderr)
+print(proc.stdout)
+print(proc.returncode)
