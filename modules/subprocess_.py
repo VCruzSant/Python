@@ -34,7 +34,7 @@ system = sys.platform
 
 # para win:
 if system == 'win32':
-    terminal = ['ping', '127.0.0.1',]
+    terminal = ['ping', '127.0.0.1']
     encoding = 'cp850'
 
 # para linux:
