@@ -32,3 +32,5 @@ print(PySide6.__version__)
 
 # Prints the Qt version used to compile PySide6
 print(PySide6.QtCore.__version__)  # type: ignore
+
+# teste asnfsa
