@@ -30,10 +30,10 @@ button = QPushButton('My Button')
 button.setStyleSheet('font-size: 35px; color: black')
 
 button2 = QPushButton('My Button 2')
-button.setStyleSheet('font-size: 35px; color: black')
+button2.setStyleSheet('font-size: 35px; color: black')
 
 button3 = QPushButton('My Button 3')
-button.setStyleSheet('font-size: 35px; color: black')
+button3.setStyleSheet('font-size: 35px; color: black')
 # button.show()  # adiciona o widget na hierarquia e exibe na tela]
 
 # layout onde coloco todos meus outros widgets
