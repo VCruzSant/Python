@@ -6,6 +6,7 @@ from display import Display
 from enviroment import WINDOW_ICON
 from info import Info
 from style import setupTheme
+from buttons import Button
 
 
 if __name__ == '__main__':
@@ -29,6 +30,10 @@ if __name__ == '__main__':
     display = Display()
     display.setPlaceholderText('Digite um número')
     window.addWidgetToVlayout(display)
+
+    # Button
+    button = Button('A button')
+    window.addWidgetToVlayout(button)
 
     # exec
     window.adjustFixedSize()
