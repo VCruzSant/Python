@@ -6,7 +6,7 @@ from display import Display
 from enviroment import WINDOW_ICON
 from info import Info
 from style import setupTheme
-from buttons import Button, ButtonsGrid
+from buttons import ButtonsGrid
 
 
 if __name__ == '__main__':
@@ -34,14 +34,6 @@ if __name__ == '__main__':
     # Config Grid
     BGrid = ButtonsGrid()
     window.vLayout.addLayout(BGrid)
-
-    BGrid.addWidget(Button('0'), 0, 0)
-    BGrid.addWidget(Button('1'), 0, 1)
-    BGrid.addWidget(Button('2'), 0, 2)
-
-    BGrid.addWidget(Button('3'), 1, 0)
-    BGrid.addWidget(Button('4'), 1, 1)
-    BGrid.addWidget(Button('5'), 1, 2)
 
     # exec
     window.adjustFixedSize()

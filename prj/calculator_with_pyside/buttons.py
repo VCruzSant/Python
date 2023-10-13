@@ -1,5 +1,6 @@
 from PySide6.QtWidgets import QPushButton, QGridLayout
 from enviroment import MEDIUM_FONT
+from utils import isEmpty, isNumOrNot
 
 
 class Button(QPushButton):
@@ -17,8 +18,6 @@ class Button(QPushButton):
         self.setFont(font)
         # setando tamanho minimo
         self.setMinimumSize(60, 60)
-        # setando estilo
-        self.setProperty('cssClass', 'specialButton')
 
 
 class ButtonsGrid(QGridLayout):
@@ -32,3 +31,22 @@ class ButtonsGrid(QGridLayout):
             ['1', '2', '3', '+'],
             ['',  '0', '.', '='],
         ]
+
+        self._makeGrid()
+
+    def _makeGrid(self):
+        # linhas
+        for i, row in enumerate(self._grid_mask):
+            for j, button_text in enumerate(row):
+                # colunas
+                button = Button(button_text)
+
+                # se o botão não for número e não for vazio
+                # (de acordo com minha função em utils.py) faça:
+                if not isNumOrNot(button_text) and not isEmpty(button_text):
+                    # setando estilo
+                    # button pq se eu colocar self, ele vai aplicar o estilo na
+                    # grid
+                    button.setProperty('cssClass', 'specialButton')
+
+                self.addWidget(button, i, j)
