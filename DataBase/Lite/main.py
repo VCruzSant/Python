@@ -47,17 +47,24 @@ con.commit()
 sql = (
     f'INSERT INTO {TABLE_NAME} (name, weight) '
     'VALUES '
-    '(?, ?)'
+    '(:name, :weight)'
 )
-print(sql)
+
 # executa um só comando:
 # cursor.execute(sql, ['vini sant', 79.9])
 
-# executa um comando com vários valores, lista de lista ou tuplas:
+# executa um comando com vários valores, lista ou tuplas de valores:
+# cursor.executemany(
+#     sql,
+#     [
+#         ['vini sant', 79.9], ['Cruz Vini', 79.9]
+#     ]
+# )
+
 cursor.executemany(
     sql,
     [
-        ['vini sant', 79.9], ['Cruz Vini', 79.9]
+        {'name': 'Vini', 'weight': 80}, {'name': 'Sant', 'weight': 80}
     ]
 )
 con.commit()
