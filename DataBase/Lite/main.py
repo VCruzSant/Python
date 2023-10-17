@@ -67,7 +67,28 @@ cursor.executemany(
         {'name': 'Vini', 'weight': 80}, {'name': 'Sant', 'weight': 80}
     ]
 )
+
+cursor.execute(
+    f'DELETE FROM {TABLE_NAME} '
+    'WHERE id = "2"'
+)
 con.commit()
+
+cursor.execute(
+    f'UPDATE {TABLE_NAME} '
+    'SET name = "Mudei o Nome"'
+    'WHERE id = "1"'
+)
+con.commit()
+
+cursor.execute(
+    f'SELECT * FROM {TABLE_NAME}'
+)
+
+# cursor.fetchall() -> Extrair dados para o Python
+for row in cursor.fetchall():
+    _id, name, weight = row
+    print(_id, name, weight)
 
 cursor.close()
 con.close()
