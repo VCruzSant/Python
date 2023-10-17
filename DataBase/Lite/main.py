@@ -36,10 +36,29 @@ cursor.execute(
 con.commit()
 
 # Registrando valores
+
 # CUIDADO: SQL injection
-cursor.execute(
-    f'INSERT INTO {TABLE_NAME} (name, weight)'
-    'VALUES ("Vini Sant", 79.9)'
+# cursor.execute(
+#     f'INSERT INTO {TABLE_NAME} (name, weight)'
+#     'VALUES ("Vini Sant", 79.9)'
+# )
+
+# Maneira correta com bindings:
+sql = (
+    f'INSERT INTO {TABLE_NAME} (name, weight) '
+    'VALUES '
+    '(?, ?)'
+)
+print(sql)
+# executa um só comando:
+# cursor.execute(sql, ['vini sant', 79.9])
+
+# executa um comando com vários valores, lista de lista ou tuplas:
+cursor.executemany(
+    sql,
+    [
+        ['vini sant', 79.9], ['Cruz Vini', 79.9]
+    ]
 )
 con.commit()
 
