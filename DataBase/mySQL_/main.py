@@ -32,14 +32,28 @@ cursor.execute(
 cursor.execute(f'TRUNCATE TABLE {TABLE_NAME}')
 con.commit()
 
+# Inserindo valores por tupla:
 sql = (
     f'INSERT INTO {TABLE_NAME} '
     '(name, age) '
     'VALUES ("%s", %s) '
 )
 # Tupla -> não posso editar, Lista -> posso editar
-data = ('Sant', 20)
-cursor.execute(sql, data)
+data_tuple = ('Sant', 20)
+cursor.execute(sql, data_tuple)
+con.commit()
+
+# Inserindo valores por dict
+sql = (
+    f'INSERT INTO {TABLE_NAME} '
+    '(name, age) '
+    'VALUES ("%(name)s", %(age)s) '
+)
+data_dict = {
+    "name": "Vini",
+    "age": 20
+}
+cursor.execute(sql, data_dict)
 con.commit()
 
 
