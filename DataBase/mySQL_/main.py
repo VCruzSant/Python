@@ -56,6 +56,34 @@ data_dict = {
 cursor.execute(sql, data_dict)
 con.commit()
 
+# Inserindo valores por dict em executemany(tem que ser iteráveis):
+sql = (
+    f'INSERT INTO {TABLE_NAME} '
+    '(name, age) '
+    'VALUES ("%(name)s", %(age)s) '
+)
+data_dict_many = (
+    {"name": "Cruz", "age": 29},
+    {"name": "Example", "age": 19},
+    {"name": "Rich", "age": 23}
+)
+cursor.executemany(sql, data_dict_many)
+con.commit()
+
+# Inserindo valores por tuple em executemany(tem que ser iteráveis):
+sql = (
+    f'INSERT INTO {TABLE_NAME} '
+    '(name, age) '
+    'VALUES ("%s", %s) '
+)
+data_tuple_many = (
+    ("IA", 5),
+    ("Alchemy", 7),
+    ("IoT", 50)
+)
+cursor.executemany(sql, data_tuple_many)
+con.commit()
+
 
 cursor.close()
 con.close()
