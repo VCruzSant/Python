@@ -113,6 +113,23 @@ cursor.execute(sql, id_)
 print(cursor.fetchone())
 print('-----------')
 
+# D:
+#
+sql = (
+    f'DELETE FROM {TABLE_NAME} '
+    'WHERE id = %s'
+)
+cursor.execute(sql, 3)
+con.commit()
+
+sql = (
+    f'SELECT * FROM {TABLE_NAME} '
+)
+cursor.execute(sql)
+for row in cursor.fetchall():
+    print(row)
+print('-----------')
+
 
 cursor.close()
 con.close()
