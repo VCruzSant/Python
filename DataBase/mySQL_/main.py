@@ -19,6 +19,9 @@ con = pymysql.connect(
 cursor = con.cursor()
 
 # SQL:
+
+# C:
+
 cursor.execute(
     f'CREATE TABLE IF NOT EXISTS {TABLE_NAME} ('
     'id INT NOT NULL AUTO_INCREMENT, '
@@ -83,6 +86,32 @@ data_tuple_many = (
 )
 cursor.executemany(sql, data_tuple_many)
 con.commit()
+
+
+# R:
+
+# Selecionando tudo dentro da table:
+sql = (
+    f'SELECT * FROM {TABLE_NAME} '
+)
+
+cursor.execute(sql)
+for row in cursor.fetchall():
+    print(row)
+print('-----------')
+
+# Selecionando tudo relacionado a um id específico:
+column = 'id'
+sql = (
+    f'SELECT * FROM {TABLE_NAME} '
+    f'WHERE {column} = (%s)'
+)
+id_ = int(input('Digite um id: '))
+cursor.execute(sql, id_)
+# fetchone pq é uma única linha,
+# se eu desse fetchall, ele retornaria uma tupla dentro de tupla
+print(cursor.fetchone())
+print('-----------')
 
 
 cursor.close()
