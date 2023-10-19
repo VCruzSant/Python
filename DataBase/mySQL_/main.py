@@ -5,6 +5,7 @@
 import os
 import dotenv
 import pymysql
+import pymysql.cursors
 
 dotenv.load_dotenv()
 
@@ -14,7 +15,8 @@ con = pymysql.connect(
     host=os.environ['MYSQL_HOST'],
     user=os.environ['MYSQL_USER'],
     password=os.environ['MYSQL_PASSWORD'],
-    database=os.environ['MYSQL_DATABASE']
+    database=os.environ['MYSQL_DATABASE'],
+    cursorclass=pymysql.cursors.DictCursor
 )
 cursor = con.cursor()
 
@@ -113,8 +115,25 @@ cursor.execute(sql, id_)
 print(cursor.fetchone())
 print('-----------')
 
+# U:
+
+sql = (
+    f'UPDATE {TABLE_NAME} '
+    'SET name = %s, age = %s '
+    'WHERE id = %s'
+)
+cursor.execute(sql, ('Linuz', 18, 2))
+con.commit()
+
+sql = (
+    f'SELECT * FROM {TABLE_NAME} '
+)
+cursor.execute(sql)
+for row in cursor.fetchall():
+    print(row)
+print('-----------')
+
 # D:
-#
 sql = (
     f'DELETE FROM {TABLE_NAME} '
     'WHERE id = %s'
@@ -130,6 +149,34 @@ for row in cursor.fetchall():
     print(row)
 print('-----------')
 
+# scrol:
+# cursor.scroll(-2) -> padrão relativo
+# for row in cursor.fetchall():
+#     print(row)
+
+# cursor.scroll(0, 'absolute')
+# for row in cursor.fetchall():
+#     print(row)
+
+# Scroll com SSDictCursor
+# print('fetchall_unbuffered: ')
+# sql = (
+#     f'SELECT * FROM {TABLE_NAME} '
+# )
+# cursor.execute(sql)
+# for row in cursor.fetchall_unbuffered():
+#     print(row)
+
+# rows
+sql = (
+    f'SELECT * FROM {TABLE_NAME} '
+)
+resultFromSelect = cursor.execute(sql)
+for row in cursor.fetchall():
+    print(row)
+print('resultFromSelect: ', resultFromSelect)
+print('rowCount: ', cursor.rowcount)
+print('-----------')
 
 cursor.close()
 con.close()
